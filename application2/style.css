@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.contaner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.calc-contaner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 0 20px 20px;
+}
+.input-contaner{
+  width: 100%;
+}
+.input-contaner input{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+.masseg,
+.massegError,
+.massegGood {
+  background: #ddd;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.masseg {
+  display: none;
+}
+.massegError {
+  color: red;
+  display: block;
+}
+.massegGood {
+  color: blue;
+  display: block;
+}
