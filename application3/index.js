@@ -11,13 +11,16 @@ const days = {
     "السبت": "كن مستعدا لبداية الاسبوع",
 }
 buttonCheek.addEventListener("click", () => {
-    paragraphMasseg.classList.remove("masseg", "massegError", "massegGood")
-
+    paragraphMasseg.classList.remove("massegError", "massegGood")
+    paragraphMasseg.classList.add("masseg")
+    
     let day = inputDay.value.trim()
     if (!days[day]) {
+        paragraphMasseg.classList.remove("masseg")
         paragraphMasseg.classList.add("massegError")
         return paragraphMasseg.textContent = "الرجاء اختيار يوم من الاسبوع"
     }
+    paragraphMasseg.classList.remove("masseg")
     paragraphMasseg.classList.add("massegGood")
     return paragraphMasseg.textContent = `انة يوم ${[day]} : ${days[day]}`
 
