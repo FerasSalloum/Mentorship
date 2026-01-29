@@ -38,6 +38,11 @@ body {
   padding: 0 5px;
   margin-bottom: 20px;
 }
+@media (min-width: 992px) {
+  .input-contaner {
+    width: 60%;
+  }
+}
 .input-contaner input {
   display: block;
   width: 100%;
@@ -63,6 +68,11 @@ body {
   gap: 10px;
   margin-bottom: 20px;
   
+}
+@media (min-width: 992px) {
+  .todo-contaner {
+    width: 60%;
+  }
 }
 .todo-contaner h2 {
   width: 100%;
@@ -90,7 +100,7 @@ body {
 .masseg,
 .massegError,
 .massegGood {
-  width: 80%;
+  width: 50%;
   text-align: center;
   padding: 10px 20px;
   border-radius: 10px;
