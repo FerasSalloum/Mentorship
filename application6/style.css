@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #A5FFD6;
+  padding-bottom: 20px;
+}
+h1{
+  width: 100%;
+  text-align: center;
+  background-color: #84DCC6;
+  margin-top: 0 !important ;
+  padding: 20px 0;
+}
+.scene {
+  width: 210px;
+  height: 140px;
+  perspective: 1000px; 
+  margin: 100px auto;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  background-color: #FFA69E;
+  color: white;
+  left: 10px;
+  top: 10px;
+  border: 2px solid #FF686B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.controls{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.controls button{
+  border: none;
+  outline: none;
+  padding: 10px 20px ;
+  border-radius: 10px;
+  background-color: #FF686B;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  transition:transform 0.5s ease-in-out ;
+  cursor: pointer;
+}
+.controls button:hover{
+  transform: scale(1.1);
+}
+
+/* أهم جزء: دفع البطاقات للخارج لتشكل دائرة */
+/* المسافة (translateZ) تُحسب بناءً على عرض البطاقة (تقريباً 300px لـ 10 قطع) */
