@@ -105,7 +105,6 @@ let state = {
     type: "all",
     price: "allPraes"
 };
-
 const filterAndRender = () => {
     let result = allProduct.filter(item => {
         const priceMatch =
@@ -117,7 +116,6 @@ const filterAndRender = () => {
     });
     result.sort((a, b) => state.sort === "UP" ? a.praese - b.praese : b.praese - a.praese);
     render(result);
-    updateUI();
 };
 const render = (items) => {
     productContaner.innerHTML = items.map(item => `
@@ -126,19 +124,13 @@ const render = (items) => {
             <p>السعر: ${item.praese} جنيه</p>
         </div>
     `).join('');
+    updateUI();
 };
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const { category, value } = btn.dataset;
-        state[category] = value;
-        filterAndRender();
-    });
-});
 const updateUI = () => {
-    document.querySelectorAll('.filter-btn button').forEach(el => {
+    document.querySelectorAll('.filter-btn ').forEach(el => {
         el.classList.remove('activ-UP', 'activ-DOWN', 'swing-right-fwd');
     });
-    document.querySelectorAll('.filter-btn ').forEach(el => {
+    document.querySelectorAll('.filter-btn button').forEach(el => {
         el.classList.remove('activ-UP', 'activ-DOWN', 'swing-right-fwd');
     });
     document.getElementById(state.type).classList.add('swing-right-fwd');
@@ -148,4 +140,11 @@ const updateUI = () => {
     document.getElementById(state.type).classList.add('swing-right-fwd');
     document.getElementById(state.price).classList.add('swing-right-fwd');
 };
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const { category, value } = btn.dataset;
+        state[category] = value;
+        filterAndRender();
+    });
+});
 filterAndRender();
