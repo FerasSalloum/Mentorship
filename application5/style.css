@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #F7FFF7;
+  padding-bottom: 20px;
+}
+h1{
+  width: 100%;
+  background: #388659;
+  margin: 0 0 20px!important;
+  padding: 10px;
+  text-align: center;
+  color: #F7FFF7;
+
+}
+.form-contaner {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  gap: 20px;
+  padding: 20px;
+  background-color: #52AA8A;
+  border-radius: 20px 20px 0  0;
+}
+@media (min-width: 992px) {
+  .form-contaner{
+    width: 60%;
+  }
+  
+}
+.form-contaner input{
+  padding:  10px;
+  border-radius: 10px;
+  outline: none;
+  border-width: 1px;
+  flex: 1;
+}
+.form-contaner button{
+  padding: 10px;
+  background-color:#3AAED8;
+  border-width: 1px;
+  outline: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.form-contaner button:hover{
+  color: white;
+  transform: scale(1.1);
+}
+.form-contaner button i{
+  transition: all 0.5s ease-in-out;
+  color: white;
+}
+.form-contaner button:hover i{
+  color: black;
+}
+.prodacts-contaner {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  gap: 20px;
+  padding: 20px;
+  background-color: #2BD9FE;
+  border-radius: 0 0 20px 20px;
+  
+}
+@media (min-width: 992px) {
+  .prodacts-contaner{
+    width: 60%;
+  }
+  
+}
+.prodacts-contaner .prodact{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  min-width: 150px;
+}
+.prodacts-contaner .prodact:hover{
+  transform: translateY(-10px);
+  box-shadow: 5px 10px 20px 0px black;;
+}
+.prodacts-contaner .prodact h3{
+  color: #3AAED8;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.prodacts-contaner .prodact p{
+  font-weight: bold;
+}
