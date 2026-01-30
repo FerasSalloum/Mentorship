@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>application7</title>
+</head>
+
+<body>
+    <div class="contaner">
+        <div class="responsev-contaner">
+            <div id="productContaner" class="product-contaner"></div>
+            <div class="conrol-contaner">
+                <div class="sort-contaner">
+                    <h3>عرض العناصر</h3>
+                    <div class="sort-button-contaner">
+                        <!-- <i id="UP" class="fa-solid fa-arrow-up activ-UP"></i>
+                        <i id="DOWN" class="fa-solid fa-arrow-down"></i> -->
+                        <i class="fa-solid fa-arrow-up filter-btn" data-category="sort" data-value="UP" id="UP"></i>
+                        <i class="fa-solid fa-arrow-down filter-btn" data-category="sort" data-value="DOWN"
+                            id="DOWN"></i>
+                    </div>
+                </div>
+                <!-- <div class="type-contaner">
+                    <h3>الأصناف</h3>
+                    <div class="btn-contaner">
+                        <button id="all" class="normal-button"></button>
+                        <span>الكل</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="home" class="normal-button"></button>
+                        <span>ادوات منزلية</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="ilctrec" class="normal-button"></button>
+                        <span>كهربائيات</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="food" class="normal-button"></button>
+                        <span>غذائيات</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="clean" class="normal-button"></button>
+                        <span>منظفات</span>
+                    </div>
+                </div> -->
+                <div class="type-contaner">
+                    <h3>الأصناف</h3>
+                    <div class="btn-contaner filter-btn" data-category="type" data-value="all">
+                        <button id="all" class="normal-button"></button><span>الكل</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="type" data-value="home">
+                        <button id="home" class="normal-button"></button><span>منزلية</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="type" data-value="ilctrec">
+                        <button id="ilctrec" class="normal-button"></button><span>كهربائيات</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="type" data-value="food">
+                        <button id="food" class="normal-button"></button><span>طعام</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="type" data-value="clean">
+                        <button id="clean" class="normal-button"></button><span>منظفات</span>
+                    </div>
+                </div>
+                <!-- <div class="praes-contaner">
+                    <h3>سعر العناصر</h3>
+                    <div class="btn-contaner">
+                        <button id="low" class="normal-button"></button>
+                        <span>منخفظ</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="mideom" class="normal-button"></button>
+                        <span>متوسط</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="hig" class="normal-button"></button>
+                        <span>مرتفع</span>
+                    </div>
+                    <div class="btn-contaner">
+                        <button id="allPraes" class="normal-button"></button>
+                        <span>كل الاسعار</span>
+                    </div>
+                </div> -->
+                <div class="praes-contaner">
+                    <h3>السعر</h3>
+                    <div class="btn-contaner filter-btn" data-category="price" data-value="low" >
+                        <button id="low" class="normal-button"></button><span>منخفض</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="price" data-value="mideom" >
+                        <button id="mideom" class="normal-button"></button><span>متوسط</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="price" data-value="hig" >
+                        <button id="hig" class="normal-button"></button><span>مرتفع</span>
+                    </div>
+                    <div class="btn-contaner filter-btn" data-category="price" data-value="allPraes" >
+                        <button id="allPraes" class="normal-button"></button><span>الكل</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>
