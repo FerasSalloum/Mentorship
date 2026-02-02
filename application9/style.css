@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+.contaner {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #2660a4;
+}
+.card-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 25px;
+}
+.card {
+  background-color: #edf7f6;
+  width: 200px;
+  min-height: 200px;
+  max-height: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.card:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+.card h2 {
+  margin-bottom: 10px;
+  color: #301807;
+}
+.card p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #56351e;
+}
+.card button {
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.card button:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+.card .idet {
+  background-color: #2660a4;
+}
+.card .dilit {
+  background-color: red;
+}
+.idet-card-contaner {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0s ease-in-out;
+}
+.idet-card {
+  position: relative;
+  background-color: #2660a4;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 10px;
+}
+.idet-card i {
+  position: absolute;
+  padding: 0;
+  top: 3px;
+  right: 3px;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.idet-card i:hover {
+  transform: scale(1.1);
+  background-color: red;
+  color: white;
+}
+.idet-card input {
+  padding: 5px 10px;
+  outline: none;
+}
+.idet-card button {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+.idet-card button:hover {
+  transform: scale(1.1);
+  border: 1px solid white;
+}
