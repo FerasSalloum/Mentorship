@@ -38,9 +38,8 @@ const allBooks = [
 ]
 const types = document.querySelectorAll(".books")
 const info = document.getElementById("info")
-let allPages = 0
+const allPages = allBooks.reduce((total, book) => total + book.pages, 0);
 allBooks.forEach((book) => {
-    allPages += book.pages
     types.forEach((item) => {
         if (item.dataset.type == book.type) {
             item.innerHTML +=
