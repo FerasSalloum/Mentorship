@@ -27,6 +27,10 @@ const allProduct = [
 let broductshow = allProduct
 const cardContaner = document.querySelector(".card-contaner")
 const idetContaner = document.querySelector(".idet-card-contaner")
+const closeEditModal = () => {
+    idetContaner.innerHTML = ""
+    idetContaner.setAttribute("style", "visibility: hidden;")
+}
 const showbroduct = () => {
     cardContaner.innerHTML = broductshow.map((item) => {
         return item = `<div class="card" data-product="${item.name}">
@@ -43,8 +47,8 @@ const showbroduct = () => {
 }
 const iditeProduct = (e) => {
     idetContaner.setAttribute("style", "visibility: visible;")
-    const productName = e.target.parentElement.parentElement.dataset.product
-    const item = broductshow.filter((item) => item.name == productName)[0]
+    const productName = e.target.closest(".card").dataset.product
+    const item = broductshow.find((item) => item.name == productName)
     idetContaner.innerHTML = ` 
             <form class="idet-card" id="formIdit" >
                 <i id="close-buton"  class="fa-solid fa-circle-xmark"></i>
@@ -60,24 +64,22 @@ const iditeProduct = (e) => {
             if (item.name == productName) {
                 item.title = document.getElementById("title").value
                 item.info = document.getElementById("info").value
-                item.price = document.getElementById("praes").value
+                item.price = parseInt(document.getElementById("praes").value)
             }
         })
-        idetContaner.innerHTML = ""
-        idetContaner.setAttribute("style", "visibility: hidden;")
+        closeEditModal()
         showbroduct()
     })
     document.getElementById("close-buton").addEventListener("click", (e) => {
-        idetContaner.innerHTML = ""
-        idetContaner.setAttribute("style", "visibility: hidden;")
+        closeEditModal()
     })
 }
 cardContaner.addEventListener("click", (e) => {
-    if (e.target.className == "dilit") {
-        const productName = e.target.parentElement.parentElement.dataset.product
+    if (e.target.classList.contains("dilit")) {
+        const productName = e.target.closest(".card").dataset.product
         broductshow = broductshow.filter((item) => item.name != productName)
         return showbroduct()
-    } else if (e.target.className == "idet") {
+    } else if (e.target.classList.contains("idet")) {
         iditeProduct(e)
     }
 })
