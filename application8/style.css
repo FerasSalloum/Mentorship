@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+:root {
+  --book-width: 100px;
+  --book-height: 150px;
+  --book-thickness: 30px;
+  --main-color: #334195;
+  --darker-color: #1a237e;
+}
+h1 {
+  background-color: #da7635;
+  color: white;
+  margin: 0 !important;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.liprary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+.class {
+  width: 100%;
+}
+.class > h2 {
+  width: 100%;
+  background-color: #654236;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  min-height: 25px;
+}
+.books {
+  width: 100%;
+  height: 180px;
+  padding: 0 50px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 20px;
+}
+.info {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #2a0800;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.book-contaner {
+  width: var(--book-width);
+  height: var(--book-height);
+  perspective: 1500px;
+}
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-90deg) rotateX(0deg);
+  /* transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg); */
+}
+.front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--main-color);
+  z-index: 5;
+  transform-origin: right;
+  border-radius: 5px 0 0 5px;
+}
+.pages {
+  position: absolute;
+  width: calc(100% - 3px);
+  width: 100%;
+  height: 100%;
+  background: #fffaf0;
+  z-index: 3;
+  border-radius: 5px 0 0 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.pages p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  z-index: 1;
+  transform: translateZ(calc(-1 * var(--book-thickness)));
+  border-radius: 5px 0 0 5px;
+}
+.lift-cover {
+  position: absolute;
+  height: 100%;
+  width: var(--book-thickness);
+  background: var(--darker-color);
+  left: 0;
+  z-index: 2;
+  transform: rotateY(-90deg) translateX(calc(var(--book-thickness) / -2))
+    translateZ(-85px);
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lift-cover h2 {
+  position: absolute;
+  color: white;
+  width: fit-content;
+  font-size: 16px;
+  text-wrap-mode: nowrap;
+  transform: rotate(-90deg) rotateY(180deg);
+}
+.top-cover {
+  position: absolute;
+  height: var(--book-thickness);
+  width: 100%;
+  background: white;
+  border-top: 2px solid var(--darker-color);
+  border-bottom: 2px solid var(--darker-color);
+  left: 0;
+  z-index: 2;
+  transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+  transform-origin: center;
+  border-radius: 5px 0px 0px 5px;
+}
+.go-out {
+  animation: go-out 0.5s 0s ease-in-out forwards;
+}
+.go-in {
+  animation: go-in 0.5s 0.5s ease-in-out forwards;
+  transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
+}
+/* .book:hover .front {
+  transform: rotateY(160deg);
+} */
+@keyframes go-out {
+  0% {
+    transform: rotateX(0deg) rotateY(-90deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(-90deg) rotateZ(45deg);
+  }
+  100% {
+    transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
+  }
+}
+@keyframes go-in {
+  0% {
+    transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(-90deg) rotateZ(45deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+  }
+}
+.front-open {
+  animation: opening 0.5s 0.5s ease-in-out forwards;
+}
+.front-close {
+  animation: close 0.5s 0s ease-in-out forwards;
+}
+@keyframes opening {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(160deg) rotateZ(0deg);
+  }
+}
+@keyframes close {
+  0% {
+    transform: rotateX(0deg) rotateY(160deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
