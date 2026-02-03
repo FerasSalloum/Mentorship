@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>application10</title>
+</head>
+
+<body>
+    <div class="contaner">
+        <h1>جدول المستخدمين</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>اسم المستخدم</th>
+                    <th>عمر المستخدم</th>
+                    <th>البريد الالكتروني</th>
+                    <th>الاجرائات</th>
+                </tr>
+            <tbody id="tableBody">
+            </tbody>
+            </thead>
+        </table>
+        <form id="userForm">
+            <input type="text" id="userName" required placeholder="اسم المستخدم">
+            <input type="number" id="userAge" required placeholder="عمر المستخدم">
+            <input type="email" id="userEmail" required placeholder="البريد الالكتروني">
+            <button type="submit">اضافة مستخدم</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

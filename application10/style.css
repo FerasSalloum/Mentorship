@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+.contaner {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #242038;
+}
+table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 10px 0;
+  color: white;
+  background-color: #725ac1;
+  text-align: center;
+}
+thead {
+  width: 100%;
+  padding: 0 50px;
+}
+thead tr {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #242038;
+}
+thead th {
+  border: 1px solid white;
+  padding: 5px 10px;
+  width: 25%;
+}
+thead th:not(th:last-child) {
+  border-left: none;
+}
+tbody {
+  width: 100%;
+  padding: 0 50px;
+}
+tbody tr {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+tbody td {
+  border: 1px solid white;
+  padding: 5px 10px;
+  width: 25%;
+}
+tbody td:not(td:last-child) {
+  border-left: none;
+}
+tbody td i {
+  color: red;
+  cursor: pointer;
+}
+tbody td:hover i {
+  color: red;
+  transform: scale(1.1);
+}
+form {
+  width: 100%;
+  padding: 10px 50px;
+  background-color:#F7ECE1 ;
+  display: flex;
+  align-items: center; justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+form button{
+  border: none;
+  outline: none;
+  background-color: #CAC4CE;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover{
+  border: 1px solid black;
+  transform: scale(1.1) ;
+}
+
