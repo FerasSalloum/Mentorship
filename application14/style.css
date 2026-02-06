@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #090c9b;
+}
+.contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+}
+.users-contaner,
+.products-contaner {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.users-contaner h2,
+.products-contaner h2 {
+  background-color: #3066be;
+  color: white;
+  width: 100%;
+  padding: 5px;
+}
+.add-user,
+.add-product {
+  width: 100%;
+  background-color: #fbfff1;
+  padding: 20px 10px;
+}
+.add-product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-user input,
+.add-product input {
+  padding: 5px;
+}
+.add-user button,
+.add-product button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #b4c5e4;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.add-user button:hover,
+.add-product button:hover {
+  background-color: #3066be;
+  color: white;
+}
+.users,
+.products {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.user,
+.product {
+  width: 100%;
+  height: 50px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background-color: #fff;
+}
+.user p {
+  flex: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+.product p {
+  flex: 1;
+  font-weight: bold;
+}
+.user i,
+.product i {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.user i:hover,
+.product i:hover {
+  color: red;
+  font-size: 20px;
+}
+.wall {
+  height: 100%;
+  width: 10px;
+  background-color: #3c3744;
+}

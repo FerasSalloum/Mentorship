@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>application1</title>
+</head>
+
+<body>
+    <div class="main-contaner">
+        <h1>عرض تطبيقي</h1>
+        <div class="contaner">
+            <div class="users-contaner">
+                <form class="add-user">
+                    <input type="text" placeholder="اسم المستخدم" id="userName" required>
+                    <button type="submit">اضافة مستخدم</button>
+                </form>
+                <h2>المستخدمين</h2>
+                <div class="users">
+                </div>
+            </div>
+            <div class="wall"></div>
+            <div class="products-contaner">
+                <form class="add-product">
+                    <input type="text" placeholder="اسم المنتج" id="productName" required>
+                    <input type="text" placeholder="سعر المنتج " id="productPraice" required>
+                    <input type="number" placeholder="الكمية المتوفرة" id="productQuantity" required>
+                    <button id="addProduct">اضافة منتج</button>
+                </form>
+                <h2>المنتجات</h2>
+                <div class="products">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
