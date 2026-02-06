@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #242038;
+}
+.contaner {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+}
+.show-contaner {
+  height: 100%;
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+.control-contaner {
+  background-color: #725ac1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color: white;
+  font-weight: bold;
+  gap: 20px;
+  padding: 20px 0;
+}
+.input-contaner {
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 0 10px;
+}
+.input-contaner label {
+  display: block;
+  margin-bottom: 10px;
+}
+.input-contaner input,
+.input-contaner textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.input-contaner textarea {
+  height: 150px;
+  resize: none;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  transition: all 0.5s ease;
+}
+button:hover {
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+button:active {
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
