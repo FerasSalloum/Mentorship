@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>application15</title>
+</head>
+
+<body>
+    <div class="main-contaner">
+        <h1>تصفية النصوص</h1>
+        <!-- From Uiverse.io by 0xnihilism -->
+        <div class="brutalist-container">
+            <input class="brutalist-input smooth-type" type="text" id="text" />
+            <label class="brutalist-label">ادخل النص اللذي تريد مراجعتة </label>
+        </div>
+
+        <div class="button-contaner">
+            <button class="button" onclick="cleanText()">
+                <div class="text">تنضيف</div>
+            </button>
+            <button class="button" onclick="email()">
+                <div class="text">تحقق من الايمال</div>
+            </button>
+            <button class="button" onclick="password()">
+                <div class="text">تحقق من كلمة المرور</div>
+            </button>
+            <button class="button" onclick="phone()">
+                <div class="text">تحقق من رقم الهاتف</div>
+            </button>
+        </div>
+        <!-- From Uiverse.io by alexruix -->
+        <div class="card">
+            <div class="card-details">
+                <p class="text-title">تمت مراجعة النص والنتيجة هي</p>
+                <p class="text-body" id="messge"></p>
+            </div>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>
