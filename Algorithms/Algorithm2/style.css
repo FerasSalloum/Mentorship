@@ -1,0 +1,115 @@
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --purple: #d946ef;
+  --orange: #f59e0b;
+  --blue: #3b82f6;
+  --green: #2ecc71;
+  --pink: #f472b6;
+  --yellow: #eab308;
+}
+
+body {
+  background: #020617;
+  color: white;
+  font-family: sans-serif;
+  direction: rtl;
+}
+
+.sort-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: var(--bg-dark);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+.btn-dark {
+  background: #334155;
+}
+.btn-purple {
+  background: var(--purple);
+}
+.btn-orange {
+  background: var(--orange);
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.yellow {
+  background: var(--yellow);
+}
+.pink {
+  background: var(--pink);
+}
+.green {
+  background: var(--green);
+}
+
+.chart-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 300px;
+  gap: 8px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.bar {
+  width: 40px;
+  background: linear-gradient(to top, #1d4ed8, var(--blue));
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  transition: 0.3s all;
+}
+.bar-value {
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.steps-box {
+  background: #020617;
+  border: 1px solid #334155;
+  height: 150px;
+  overflow-y: auto;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: right;
+}

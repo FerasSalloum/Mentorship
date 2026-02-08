@@ -1,34 +1,35 @@
- body {
-            min-height: 100vh;
-            width: 100%;
-        }
+body {
+  min-height: 100vh;
+  width: 100%;
+}
 
-        .contaner {
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: start;
-            justify-content: center;
-            gap: 50px;
-        }
+.contaner {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  gap: 50px;
+}
 
-        .applications-contaner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
+.applications-contaner,
+.Algorithms-contaner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
-        a {
-            text-align: center;
-            display: block;
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 20px;
-            text-decoration: none;
-            background-color: #ddd;
-            color: b;
-        }
+a {
+  text-align: center;
+  display: block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #ddd;
+  color: b;
+}
