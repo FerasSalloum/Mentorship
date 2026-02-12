@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Algorithm3</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <h2 class="main-Title">Example 1: Factorial</h2>
+        <div class="recursion-container">
+            <h2>Try It: Factorial (Recursion)</h2>
+            <div class="controls">
+                <input type="number" id="numberInput" value="5" min="1" max="10">
+                <button onclick="startFactorial()" class="btn btn-purple">Calculate</button>
+                <button onclick="nextStep()" class="btn btn-orange">Step</button>
+            </div>
+
+            <div id="visualArea" class="visual-area">
+                <div id="stackContainer"></div>
+            </div>
+
+            <div id="finalResult" class="result-label">Result: --</div>
+        </div>
+    </div>
+    <div class="main-container">
+        <h2 class="main-Title">Example 2: Fibonacci</h2>
+        <div class="container">
+            <h2 style="text-align: center;">محاكي فيبوناتشي: ذاكرة سيئة vs ذاكرة جيدة</h2>
+
+            <div class="controls">
+                <input type="number" id="numInp" value="4" min="0" max="7">
+
+                <div class="mode-toggle">
+                    <button id="naiveBtn" class="mode-btn active" onclick="setMode('naive')">❌ ذاكرة سيئة
+                        (Naive)</button>
+                    <button id="memoBtn" class="mode-btn" onclick="setMode('memo')">✅ ذاكرة جيدة (Memo)</button>
+                </div>
+
+                <button class="start-btn" onclick="startFib()">ابدأ المحاكاة</button>
+            </div>
+
+            <div class="visual-area" id="tree"></div>
+            <div id="stats" class="stats"></div>
+        </div>
+    </div>
+    <div class="main-container">
+        <h2 class="main-Title">Example 3: Simple Countdown</h2>
+        <div class="countdown-container">
+            <h2>Try It: Countdown</h2>
+            <div class="controls">
+                <input type="number" id="countInput" value="5" min="1" max="10">
+                <button onclick="startCountdown()" class="btn-start">Start</button>
+            </div>
+
+            <div class="visual-area">
+                <div id="numbersBox" class="numbers-wrapper"></div>
+                <div id="blastoffMsg" class="blastoff-btn" style="display: none;">🚀 Blastoff!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
