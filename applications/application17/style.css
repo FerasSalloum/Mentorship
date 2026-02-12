@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #090c9b;
+}
+/* From Uiverse.io by andrew-demchenk0 */
+.button {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #090c9b;
+  background-color: #b4c5e4;
+  margin: 10px 0;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(5px);
+  height: 100%;
+  width: 39px;
+  background-color: #3066be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #3066be;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 100%;
+  transform: translateX(5px);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+.visible {
+  visibility: visible !important;
+}
+.add-contaner {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  visibility: hidden;
+}
+#addUser {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #3066be;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #b4c5e4;
+}
+.xmark {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.xmark:hover {
+  transform: scale(1.2);
+  color: red;
+}
+#addUser input {
+  width: 100%;
+}
+/* From Uiverse.io by Peary74 */
+#buttonAddUser {
+  font-family: inherit;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  width: 50%;
+}
+
+#buttonAddUser span {
+  display: block;
+  margin-right: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+#buttonAddUser svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#buttonAddUser:hover {
+  background: #000;
+}
+
+button:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+#buttonAddUser:hover svg {
+  transform: translateX(-1.2em) scale(1.1);
+  fill: #fff;
+}
+
+#buttonAddUser:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+#buttonAddUser:active {
+  transform: scale(0.95);
+}
+.user-contaner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background-color: #fbfff1;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 25px 0;
+}
+.user-contaner p {
+  font-weight: bold;
+}
+/* From Uiverse.io by KINGFRESS */
+.user-contaner button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #171717;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0.6rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.user-contaner button span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #0c66ed;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+
+.user-contaner button span:nth-child(6) {
+  position: relative;
+}
+
+.user-contaner button span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+.user-contaner button span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+
+.user-contaner button span:nth-child(3) {
+  transform: translate(-0.2em, 1.8em);
+}
+
+.user-contaner button span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+
+.user-contaner button span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+.user-contaner button:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
