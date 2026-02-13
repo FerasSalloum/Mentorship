@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>application18</title>
+</head>
+
+<body>
+    <div class="main-contaner">
+        <h1>عرض تطبيقي</h1>
+        <button class="add-button" onclick="showAddBook()">اضافة كتاب جديد</button>
+        <div class="add-contaner">
+            <form id="form">
+                <i onclick="showAddBook()" class="fa-solid fa-circle-xmark xmark"></i>
+                <input type="text" placeholder="عنوان الكتاب" id="title" required>
+                <input type="text" placeholder="اسم المؤلف" id="ather" required>
+                <input type="number" placeholder="عدد الصفحات" id="pages" required>
+                <textarea id="info" placeholder="نبذة عن الكتاب "></textarea>
+                <div>
+                    <label for="Ebook">كتاب الكتروني</label>
+                    <input type="checkbox" name="Ebook" id="Ebook" onchange="toEbook()">
+                </div>
+                <input type="number" placeholder="حجم الملف" id="size">
+                <button type="submit">ارسال</button>
+            </form>
+        </div>
+        <div class="info-contaner">
+            <div class="info">
+                <i onclick="showinfo()" class="fa-solid fa-circle-xmark xmark"></i>
+                <p id="infoBook">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, provident debitis! Magni quod
+                    obcaecati maiores saepe itaque tempora nostrum velit iusto laudantium? Veniam veritatis labore
+                    libero debitis magni corrupti atque!</p>
+            </div>
+        </div>
+        <div class="books-contaner">
+            <div class="books" id="NBooks">
+                <div class="book">
+                    <h2>عنوان الكتاب</h2>
+                    <p>اسم المؤلف</p>
+                    <p>عدد الصفحات</p>
+                    <button onclick="showinfo()">عرض التفاصيل </button>
+                </div>
+            </div>
+            <div class="books" id="EBooks">
+                <div class="book">
+                    <h2>عنوان الكتاب</h2>
+                    <p>اسم المؤلف</p>
+                    <p>عدد الصفحات</p>
+                    <p>حجم الملف</p>
+                    <button>عرض التفاصيل </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
