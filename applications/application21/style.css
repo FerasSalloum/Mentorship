@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  background-color: #1d4e89;
+}
+.form{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px;
+}
+.form input{
+  width: 80%;
+  padding: 5px;
+}
+.form button{
+  width: 50%;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px 0 black;
+  transition: all 0.3s ease-in-out;
+}
+.form button:focus{
+  box-shadow: none;
+}
+.masseg-container{
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
