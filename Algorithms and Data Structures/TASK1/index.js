@@ -99,4 +99,103 @@ const allProducts = [
     { id: "097", title: "Cashmere Winter Gloves", price: 45, stars: 5, photo: "https://picsum.photos/200/300" },
     { id: "098", title: "Floral Silk Tie", price: 30, stars: 4, photo: "https://picsum.photos/200/300" },
     { id: "099", title: "Professional Suit Briefcase", price: 210, stars: 5, photo: "https://picsum.photos/200/300" }
-];
+].sort((a, b) => {
+    return a.title.localeCompare(b.title)
+});
+let wordSearch = ""
+let typeSearch = "Binary"
+const showCards = () => {
+    document.querySelector(".body").innerHTML = allProducts.map((product) => {
+        return product = `
+        <div class="card" id="${product.id}">
+                    <div class="image-contaner">
+                        <img src="${product.photo}" alt="">
+                    </div>
+                    <div class="text-contaner">
+                        <h3 class="title">${product.title}</h3>
+                        <div class="praice">${product.price} <span class="curnce">$</span></div>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star ${product.stars >= 1 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 2 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 3 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 4 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 5 ? "active" : ""}"></i>
+                    </div>
+                </div>`
+    }).join(" ")
+}
+const showSearsh = () => {
+    document.querySelector(".header").classList.toggle("search-active")
+    document.querySelector(".search-contaner").classList.toggle("search-active")
+}
+const typeSearchLinear = () => {
+    typeSearch = "Linear"
+}
+const typeSearchBinary = () => {
+    typeSearch = "Binary"
+}
+const searsh = () => {
+    wordSearch = document.getElementById("wordSearch").value.toLowerCase().trim();
+    console.log(wordSearch);
+    if (typeSearch == "Binary") {
+        BinarySearch()
+    } else {
+        LinearSearch()
+    }
+}
+const BinarySearch = async () => {
+    cleancard();
+    let low = 0;
+    let high = allProducts.length - 1;
+    let target = wordSearch
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = allProducts[mid].title.toLowerCase().trim();
+
+        let midElement = document.getElementById(allProducts[mid].id);
+
+        // تمييز العنصر الذي نفحصه الآن
+        midElement.classList.add("search");
+        await sleep(500); // زيادة الوقت قليلاً في Binary Search يجعل الحركة أوضح للعين
+
+        if (guess === target) {
+            midElement.classList.remove("search");
+            midElement.classList.add("found");
+            // هنا يمكنك تحديث الرسم البياني بعدد الـ comparisons
+            return;
+        }
+
+        // إزالة لون البحث الحالي قبل الانتقال للخطوة التالية
+        midElement.classList.remove("search");
+
+        if (guess > target) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    console.log("Not found after");
+}
+const LinearSearch = async () => {
+    cleancard()
+    for (let i = 0; i < allProducts.length; i++) {
+        document.getElementById(allProducts[i].id).classList.add("search")
+        await sleep(200)
+        if (allProducts[i].title.toLowerCase().includes(wordSearch)) {
+            document.getElementById(allProducts[i].id).classList.remove("search")
+            document.getElementById(allProducts[i].id).classList.add("found")
+            break
+        } else
+            document.getElementById(allProducts[i].id).classList.remove("search")
+    }
+}
+const cleancard = () => {
+    const cards = document.querySelectorAll(".card")
+    cards.forEach((card) => {
+        card.classList.remove("found", "search")
+    })
+}
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+showCards()

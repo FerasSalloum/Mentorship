@@ -1,0 +1,218 @@
+:root {
+  --color-black-forest: #293f14;
+  --color-green: #386c0b;
+  --color-bright-fern: #38a700;
+  --color-malachtie: #31d843;
+  --color-spring-green: #3eff8b;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--color-bright-fern);
+  z-index: 2;
+  margin-bottom: 10px;
+}
+/* اضافة الكلاس الى JS */
+header.search-active {
+  margin-bottom: 110px;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+header .mune {
+  display: flex;
+  gap: 10px;
+}
+header .mune p {
+  transition: all 0.5s ease-in-out;
+}
+header .mune p:hover {
+  transform: translate(0px, -5px);
+}
+header .mune p.active {
+  border-bottom: 2px solid var(--color-spring-green);
+  transform: translate(0px, -5px);
+  font-weight: bold;
+  color: var(--color-spring-green);
+}
+header .tools i {
+  font-size: 20px;
+  cursor: pointer;
+}
+header .tools i:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  color: var(--color-spring-green);
+}
+header .search-contaner {
+  position: absolute;
+  height: 100px;
+  bottom: -100px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: var(--color-malachtie);
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+  display: none;
+}
+/* اضافة الكلاس الى جافا سكربت */
+header .search-active {
+  display: flex !important;
+}
+header .search-contaner .circle-arrow {
+  cursor: pointer;
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+header .search-contaner .circle-arrow:hover .arrow-right {
+  transform: translate(30px);
+}
+header .search-contaner .circle-arrow:hover .glass {
+  transform: translate(0px);
+}
+header .search-contaner .circle-arrow:focus .arrow-right {
+  transform: translate(30px);
+}
+header .search-contaner .circle-arrow:focus .glass {
+  transform: translate(0px);
+  color: white;
+}
+header .search-contaner .circle-arrow .glass {
+  transform: translate(-30px);
+}
+header .search-contaner .circle-arrow i {
+  font-size: 24px;
+  display: block;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.body .card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid var(--color-green);
+  padding: 20px;
+  border-radius: 20px;
+  width: 250px;
+}
+.body .found {
+  background-color: var(--color-spring-green);
+  order: -1;
+}
+.body .search {
+  background-color: yellow !important;
+}
+.body .found .title {
+  color: black !important;
+}
+.body .card .image-contaner {
+  border-radius: 20px;
+  height: 200px;
+  overflow: hidden;
+}
+.body .card .title {
+  color: var(--color-bright-fern);
+}
+.body .card .praice {
+  font-size: 25px;
+  font-weight: bold;
+}
+.body .card .praice .curnce {
+  color: yellow;
+}
+.body .card .stars {
+  color: gray;
+}
+.body .card .stars .active {
+  color: yellow;
+}
+footer {
+  margin-top: 10px;
+  background-color: var(--color-bright-fern);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 20px 20px 5px;
+}
+footer .top-contaner {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+footer .top-contaner .logo-contaner {
+  width: 30%;
+  font-size: 14px;
+}
+footer .top-contaner .logo-contaner .logo {
+  margin-bottom: 10px;
+}
+footer .top-contaner .company-contaner .title,
+footer .top-contaner .touch-contaner .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+footer .top-contaner .company-contaner p,
+footer .top-contaner .touch-contaner p {
+  margin-bottom: 5px;
+}
+footer .top-contaner .company-contaner p {
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+footer .top-contaner .company-contaner p:hover {
+  color: var(--color-spring-green);
+}

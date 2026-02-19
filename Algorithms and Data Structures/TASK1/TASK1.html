@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,43 +13,45 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo"></div>
-        <div class="mune">
-            <p>Home</p>
-            <p class="active">collection</p>
-            <p>about</p>
-            <p>Contact</p>
-        </div>
-        <div class="tools">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-user"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
-        </div>
-        <div class="search-contaner">
-            <input type="text">
-            <div>
-                <label for="Linear">Linear search</label>
-                <input type="radio" name="search" id="Linear">
+    <div class="main-contaner">
+        <header class="header">
+            <div class="logo">E-Commerce</div>
+            <div class="mune">
+                <p>Home</p>
+                <p class="active">collection</p>
+                <p>about</p>
+                <p>Contact</p>
             </div>
-            <div>
-                <label for="Binary">Binary search</label>
-                <input type="radio" name="search" id="Binary">
+            <div class="tools">
+                <i class="fa-solid fa-magnifying-glass" onclick="showSearsh()"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
             </div>
-            <div class="circle-arrow">
-                <i class="fa-solid fa-arrow-right"></i>
-                <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+            <div class="search-contaner">
+                <div>
+                    <label for="Linear">Linear search</label>
+                    <input type="radio" name="search" id="Linear" onchange="typeSearchLinear()">
+                </div>
+                <div>
+                    <label for="Binary" >Binary search</label>
+                    <input type="radio" checked name="search" id="Binary" onchange="typeSearchBinary()">
+                </div>
+                <input type="text" required id="wordSearch">
+                <button class="circle-arrow" onclick="searsh()">
+                    <i class="fa-solid fa-arrow-right arrow-right"></i>
+                    <i class="fa-solid fa-magnifying-glass-arrow-right glass"></i>
+                </button>
             </div>
-        </div>
-    </header>
-    <div class="body">
-        <div class="card">
-            <div class="image-contaner">
-                <img src="https://picsum.photos/200/300" alt="">
-            </div>
-            <div class="text-contaner">
-                <h3 class="title"></h3>
-                <div class="praice"></div>
+        </header>
+        <div class="body">
+            <div class="card found">
+                <div class="image-contaner">
+                    <img src="https://picsum.photos/200/300" alt="">
+                </div>
+                <div class="text-contaner">
+                    <h3 class="title">Classic White T-Shirt</h3>
+                    <div class="praice">25 <span class="curnce">$</span></div>
+                </div>
                 <div class="stars">
                     <i class="fa-solid fa-star active"></i>
                     <i class="fa-solid fa-star active"></i>
@@ -59,32 +61,33 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="top-contaner">
+                <div class="logo-contaner">
+                    <div class="logo">E-Commerce</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem odit sit, vero itaque ab
+                        reprehenderit illum mollitia. Adipisci dignissimos consequatur molestias! Dolores voluptate
+                        beatae
+                        ipsa consequuntur neque nulla aliquam praesentium?</p>
+                </div>
+                <div class="company-contaner">
+                    <div class="title">Company</div>
+                    <p>Home</p>
+                    <p>About us</p>
+                    <p>Delivery</p>
+                    <p>Privacy policy</p>
+                </div>
+                <div class="touch-contaner">
+                    <div class="title">GET IN TOUCH</div>
+                    <p>+1-***-***_****</p>
+                    <p>**********@gmil.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright ####@ #########.com - All Right Reserved.
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="top-contaner">
-            <div>
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem odit sit, vero itaque ab
-                    reprehenderit illum mollitia. Adipisci dignissimos consequatur molestias! Dolores voluptate beatae
-                    ipsa consequuntur neque nulla aliquam praesentium?</p>
-            </div>
-            <div>
-                <div class="title">Company</div>
-                <p>Home</p>
-                <p>About us</p>
-                <p>Delivery</p>
-                <p>Privacy policy</p>
-            </div>
-            <div>
-                <div class="title">GET IN TOUCH</div>
-                <p>+1-***-***_****</p>
-                <p>**********@gmil.com</p>
-            </div>
-        </div>
-        <div class="copyright">
-            Copyright ####@ #########.com - All Right Reserved.
-        </div>
-    </footer>
     <script src="index.js"></script>
 </body>
 
