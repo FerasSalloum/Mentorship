@@ -102,10 +102,16 @@ const allProducts = [
 ].sort((a, b) => {
     return a.title.localeCompare(b.title)
 });
-let wordSearch = ""
-let typeSearch = "Binary"
+
+const elements = {
+    body: document.querySelector(".body"),
+    header: document.querySelector(".header"),
+    searchContainer: document.querySelector(".search-contaner"),
+    searchInput: document.querySelector("#wordSearch")
+};
+
 const showCards = () => {
-    document.querySelector(".body").innerHTML = allProducts.map((product) => {
+    elements.body.innerHTML = allProducts.map((product) => {
         return product = `
         <div class="card" id="${product.id}">
                     <div class="image-contaner">
@@ -125,71 +131,59 @@ const showCards = () => {
                 </div>`
     }).join(" ")
 }
+
 const showSearsh = () => {
-    document.querySelector(".header").classList.toggle("search-active")
-    document.querySelector(".search-contaner").classList.toggle("search-active")
+    elements.header.classList.toggle("search-active")
+    elements.searchContainer.classList.toggle("search-active")
 }
-const typeSearchLinear = () => {
-    typeSearch = "Linear"
-}
-const typeSearchBinary = () => {
-    typeSearch = "Binary"
-}
+
 const searsh = () => {
-    wordSearch = document.getElementById("wordSearch").value.toLowerCase().trim();
-    console.log(wordSearch);
+    const wordSearch = elements.searchInput.value.toLowerCase().trim();
+    const typeSearch = document.querySelector('input[name="search"]:checked').id;
+    if (!wordSearch) return
+    cleancard()
     if (typeSearch == "Binary") {
-        BinarySearch()
+        BinarySearch(wordSearch)
     } else {
-        LinearSearch()
+        LinearSearch(wordSearch)
     }
 }
-const BinarySearch = async () => {
-    cleancard();
+
+const BinarySearch = async (wordSearch) => {
     let low = 0;
     let high = allProducts.length - 1;
     let target = wordSearch
-
     while (low <= high) {
         let mid = Math.floor((low + high) / 2);
         let guess = allProducts[mid].title.toLowerCase().trim();
-
         let midElement = document.getElementById(allProducts[mid].id);
-
-        // تمييز العنصر الذي نفحصه الآن
         midElement.classList.add("search");
-        await sleep(500); // زيادة الوقت قليلاً في Binary Search يجعل الحركة أوضح للعين
-
+        await sleep();
         if (guess === target) {
-            midElement.classList.remove("search");
-            midElement.classList.add("found");
-            // هنا يمكنك تحديث الرسم البياني بعدد الـ comparisons
+            midElement.classList.replace("search", "found");
             return;
         }
-
-        // إزالة لون البحث الحالي قبل الانتقال للخطوة التالية
-        midElement.classList.remove("search");
-
         if (guess > target) {
             high = mid - 1;
         } else {
             low = mid + 1;
         }
+        midElement.classList.remove("search");
     }
-    console.log("Not found after");
+    console.log("not found");
 }
-const LinearSearch = async () => {
-    cleancard()
+const LinearSearch = async (wordSearch) => {
     for (let i = 0; i < allProducts.length; i++) {
         document.getElementById(allProducts[i].id).classList.add("search")
-        await sleep(200)
-        if (allProducts[i].title.toLowerCase().includes(wordSearch)) {
-            document.getElementById(allProducts[i].id).classList.remove("search")
-            document.getElementById(allProducts[i].id).classList.add("found")
+        await sleep()
+        const guess = allProducts[i].title.toLowerCase().trim()
+        if ( guess == wordSearch) {
+            document.getElementById(allProducts[i].id).classList.replace("search", "found")
             break
         } else
             document.getElementById(allProducts[i].id).classList.remove("search")
     }
+    console.log("not found")
 }
 const cleancard = () => {
     const cards = document.querySelectorAll(".card")
@@ -197,5 +191,5 @@ const cleancard = () => {
         card.classList.remove("found", "search")
     })
 }
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 showCards()
