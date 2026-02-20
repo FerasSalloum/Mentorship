@@ -1,9 +1,9 @@
 :root {
-  --color-black-forest: #293f14;
-  --color-green: #386c0b;
-  --color-bright-fern: #38a700;
-  --color-malachtie: #31d843;
-  --color-spring-green: #3eff8b;
+  --color-indigo-bloom: #6f2dbd;
+  --color-lavender-purple: #a663cc;
+  --color-wisteria: #b298dc;
+  --color-pals-sky: #b8d0eb;
+  --color-icy-aqua: #b9faf8;
 }
 * {
   margin: 0;
@@ -13,4 +13,186 @@ body {
   width: 100%;
   height: 100%;
   min-height: 100vh;
+}
+.main-contaner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-color: #ddd;
+}
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--color-indigo-bloom);
+  z-index: 2;
+}
+header .mune {
+  display: flex;
+  gap: 10px;
+}
+header .mune p {
+  transition: all 0.5s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+header .mune p:hover {
+  transform: translate(0px, -5px);
+}
+header .mune p.active {
+  border-bottom: 2px solid var(--color-lavender-purple);
+  transform: translate(0px, -5px);
+  font-weight: bold;
+  color: var(--color-lavender-purple);
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.body {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  gap: 10px;
+}
+.form-contaner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 40px;
+  padding: 20px;
+  background-color: var(--color-lavender-purple);
+  width: 25%;
+  min-height: 50vh;
+  height: stretch;
+}
+.form-contaner form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+.form-contaner form input {
+  width: 100%;
+}
+.form-contaner form textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  overflow-y: scroll;
+}
+.form-contaner form button {
+  margin-top: 20px;
+  width: 75%;
+}
+.form-contaner .button-contaner button,
+.form-contaner form button {
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.form-contaner .button-contaner button:hover,
+.form-contaner form button:hover {
+  box-shadow: inset 0px 0px 5px 1px black;
+}
+.form-contaner .button-contaner button:focus,
+.form-contaner form button:focus {
+  box-shadow: inset 0px 0px 10px 2px black;
+}
+.form-contaner .button-contaner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+footer {
+  background-color: var(--color-indigo-bloom);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 20px 20px 5px;
+  color: white;
+  width: 100%;
+}
+footer .top-contaner {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+footer .top-contaner .logo-contaner {
+  width: 30%;
+  font-size: 14px;
+}
+footer .top-contaner .logo-contaner .logo {
+  margin-bottom: 10px;
+}
+footer .top-contaner .company-contaner .title,
+footer .top-contaner .touch-contaner .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+footer .top-contaner .company-contaner p,
+footer .top-contaner .touch-contaner p {
+  margin-bottom: 5px;
+}
+footer .top-contaner .company-contaner p {
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+footer .top-contaner .company-contaner p:hover {
+  color: var(--color-lavender-purple);
+}
+.cards-contaner {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: stretch;
+  width: 75%;
+  padding: 20px;
+  gap: 20px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--color-indigo-bloom);
+  padding: 10px;
+  border-radius: 10px;
+}
+.card p {
+  width: 100%;
+  text-align: center;
+}
+.card .button-contaner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
