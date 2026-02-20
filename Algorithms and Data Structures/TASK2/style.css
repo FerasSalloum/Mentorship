@@ -1,0 +1,16 @@
+:root {
+  --color-black-forest: #293f14;
+  --color-green: #386c0b;
+  --color-bright-fern: #38a700;
+  --color-malachtie: #31d843;
+  --color-spring-green: #3eff8b;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
