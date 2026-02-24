@@ -128,6 +128,15 @@ header .search-contaner .circle-arrow i {
 }
 .body {
   display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.cards,
+.cards-found{
+  display: flex;
   flex-wrap: wrap;
   align-items: start;
   justify-content: center;
@@ -147,7 +156,15 @@ header .search-contaner .circle-arrow i {
 }
 .body .found {
   background-color: var(--color-spring-green);
-  order: -1;
+}
+.body .now {
+  background-color: red;
+}
+.body .sort-search {
+  background-color: blue;
+}
+.body .done {
+  background-color: var(--color-spring-green);
 }
 .body .search {
   background-color: yellow !important;

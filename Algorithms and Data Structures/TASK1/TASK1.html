@@ -23,7 +23,8 @@
                 <p>Contact</p>
             </div>
             <div class="tools">
-                <i class="fa-solid fa-magnifying-glass" onclick="showSearsh()"></i>
+                <i id="sortIcon" class="fa-solid fa-arrow-down-a-z" onclick="sortProducts()"></i>
+                <i id="searchIcon" class="fa-solid fa-magnifying-glass" onclick="showSearsh()"></i>
                 <i class="fa-solid fa-user"></i>
                 <i class="fa-solid fa-bag-shopping"></i>
             </div>
@@ -33,8 +34,8 @@
                     <input type="radio" name="search" id="Linear">
                 </div>
                 <div>
-                    <label for="Binary" >Binary search</label>
-                    <input type="radio" checked name="search" id="Binary" >
+                    <label for="Binary">Binary search</label>
+                    <input type="radio" checked name="search" id="Binary">
                 </div>
                 <input type="text" required id="wordSearch">
                 <button class="circle-arrow" onclick="searsh()">
@@ -44,21 +45,9 @@
             </div>
         </header>
         <div class="body">
-            <div class="card found">
-                <div class="image-contaner">
-                    <img src="https://picsum.photos/200/300" alt="">
-                </div>
-                <div class="text-contaner">
-                    <h3 class="title">Classic White T-Shirt</h3>
-                    <div class="praice">25 <span class="curnce">$</span></div>
-                </div>
-                <div class="stars">
-                    <i class="fa-solid fa-star active"></i>
-                    <i class="fa-solid fa-star active"></i>
-                    <i class="fa-solid fa-star active"></i>
-                    <i class="fa-solid fa-star active"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
+            <div class="cards-found">
+            </div>
+            <div class="cards">
             </div>
         </div>
         <footer>

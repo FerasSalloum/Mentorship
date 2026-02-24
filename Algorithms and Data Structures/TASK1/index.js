@@ -1,4 +1,4 @@
-const allProducts = [
+let allProducts = [
     { id: "000", title: "Classic White T-Shirt", price: 25, stars: 4, photo: "https://picsum.photos/200/300" },
     { id: "001", title: "Blue Denim Jeans", price: 55, stars: 5, photo: "https://picsum.photos/200/300" },
     { id: "002", title: "Running Sneakers Pro", price: 89, stars: 5, photo: "https://picsum.photos/200/300" },
@@ -99,17 +99,66 @@ const allProducts = [
     { id: "097", title: "Cashmere Winter Gloves", price: 45, stars: 5, photo: "https://picsum.photos/200/300" },
     { id: "098", title: "Floral Silk Tie", price: 30, stars: 4, photo: "https://picsum.photos/200/300" },
     { id: "099", title: "Professional Suit Briefcase", price: 210, stars: 5, photo: "https://picsum.photos/200/300" }
-].sort((a, b) => {
-    return a.title.localeCompare(b.title)
-});
-
+]
+let foundProducts = []
 const elements = {
-    body: document.querySelector(".body"),
+    body: document.querySelector(".cards"),
     header: document.querySelector(".header"),
     searchContainer: document.querySelector(".search-contaner"),
-    searchInput: document.querySelector("#wordSearch")
+    searchInput: document.querySelector("#wordSearch"),
+    cardsFound: document.querySelector(".cards-found"),
+    searchIcon: document.querySelector("#searchIcon"),
+    sortIcon: document.querySelector("#sortIcon"),
 };
+const sortProducts = async () => {
+    elements.searchIcon.style.visibility = "hidden"
+    elements.sortIcon.style.visibility = "hidden"
+    for (let i = 0; i < allProducts.length - 1; i++) {
+        let minIdx = i;
+        document.getElementById(allProducts[i].id).classList.add("now")
+        for (let j = i + 1; j < allProducts.length; j++) {
+            document.getElementById(allProducts[j].id).classList.add("sort-search");
+            // await sleep(1);
+            if (allProducts[j].title.toLowerCase().trim().localeCompare(allProducts[minIdx].title.toLowerCase().trim()) < 0) {
+                document.getElementById(allProducts[minIdx].id).classList.remove("sort-search", "done", "search");
+                minIdx = j;
+                document.getElementById(allProducts[minIdx].id).classList.add("search")
+            }
+            document.getElementById(allProducts[j].id).classList.remove("sort-search");
+        }
+        if (minIdx !== i) {
+            [allProducts[i], allProducts[minIdx]] = [allProducts[minIdx], allProducts[i]];
+            showCards();
+        }
+        document.getElementById(allProducts[i].id).classList.remove("now", "sort-search", "done", "search")
+        document.getElementById(allProducts[i].id).classList.add("done");
+    }
+    document.querySelector(".done").classList.remove("done");
+    elements.searchIcon.style.visibility = "visible";
+    elements.sortIcon.style.visibility = "visible";
+};
+const showFoundCards = () => {
 
+    elements.cardsFound.innerHTML = foundProducts.map((product) => {
+        return product = `
+        <div class="card found" id="${product.id}">
+                    <div class="image-contaner">
+                        <img src="${product.photo}" alt="">
+                    </div>
+                    <div class="text-contaner">
+                        <h3 class="title">${product.title}</h3>
+                        <div class="praice">${product.price} <span class="curnce">$</span></div>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star ${product.stars >= 1 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 2 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 3 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 4 ? "active" : ""}"></i>
+                        <i class="fa-solid fa-star ${product.stars >= 5 ? "active" : ""}"></i>
+                    </div>
+                </div>`
+    }).join(" ")
+}
 const showCards = () => {
     elements.body.innerHTML = allProducts.map((product) => {
         return product = `
@@ -131,13 +180,12 @@ const showCards = () => {
                 </div>`
     }).join(" ")
 }
-
 const showSearsh = () => {
     elements.header.classList.toggle("search-active")
     elements.searchContainer.classList.toggle("search-active")
 }
-
 const searsh = () => {
+    elements.sortIcon.style.visibility = "hidden";
     const wordSearch = elements.searchInput.value.toLowerCase().trim();
     const typeSearch = document.querySelector('input[name="search"]:checked').id;
     if (!wordSearch) return
@@ -147,8 +195,8 @@ const searsh = () => {
     } else {
         LinearSearch(wordSearch)
     }
-}
 
+}
 const BinarySearch = async (wordSearch) => {
     let low = 0;
     let high = allProducts.length - 1;
@@ -158,9 +206,11 @@ const BinarySearch = async (wordSearch) => {
         let guess = allProducts[mid].title.toLowerCase().trim();
         let midElement = document.getElementById(allProducts[mid].id);
         midElement.classList.add("search");
-        await sleep();
+        await sleep(500);
         if (guess === target) {
-            midElement.classList.replace("search", "found");
+            midElement.classList.remove("search");
+            foundProducts.push(allProducts[mid])
+            showFoundCards()
             return;
         }
         if (guess > target) {
@@ -171,25 +221,32 @@ const BinarySearch = async (wordSearch) => {
         midElement.classList.remove("search");
     }
     console.log("not found");
+    elements.sortIcon.style.visibility = "visible";
 }
 const LinearSearch = async (wordSearch) => {
     for (let i = 0; i < allProducts.length; i++) {
         document.getElementById(allProducts[i].id).classList.add("search")
-        await sleep()
+        await sleep(500)
         const guess = allProducts[i].title.toLowerCase().trim()
-        if ( guess == wordSearch) {
-            document.getElementById(allProducts[i].id).classList.replace("search", "found")
+        if (guess == wordSearch) {
+            document.getElementById(allProducts[i].id).classList.remove("search")
+            foundProducts.push(allProducts[i])
+            showFoundCards()
             break
         } else
             document.getElementById(allProducts[i].id).classList.remove("search")
     }
     console.log("not found")
+    elements.sortIcon.style.visibility = "visible";
 }
 const cleancard = () => {
+    foundProducts = []
+    elements.cardsFound.innerHTML = ""
     const cards = document.querySelectorAll(".card")
     cards.forEach((card) => {
         card.classList.remove("found", "search")
     })
 }
-const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
+const sleep = (num) => new Promise(resolve => setTimeout(resolve, num));
+
 showCards()
