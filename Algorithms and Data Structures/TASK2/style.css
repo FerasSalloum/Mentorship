@@ -78,7 +78,8 @@ header .mune p.active {
   min-height: 50vh;
   height: stretch;
 }
-.form-contaner form {
+.edet-scren #formaEdet,
+.form-contaner #formaEdet {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -86,19 +87,24 @@ header .mune p.active {
   justify-content: start;
   gap: 10px;
 }
+.edet-scren #formaEdet input,
 .form-contaner form input {
   width: 100%;
 }
-.form-contaner form textarea {
+/* .form-contaner form textarea {
   width: 100%;
   height: 150px;
   resize: none;
   overflow-y: scroll;
-}
+} */
+
+.edet-scren #formaEdet button,
 .form-contaner form button {
   margin-top: 20px;
   width: 75%;
 }
+.edet-scren #formaEdet button,
+.edet-scren .button-contaner button,
 .form-contaner .button-contaner button,
 .form-contaner form button {
   outline: none;
@@ -109,14 +115,19 @@ header .mune p.active {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.edet-scren .button-contaner button:hover,
+.edet-scren #formaEdet button:hover,
 .form-contaner .button-contaner button:hover,
 .form-contaner form button:hover {
   box-shadow: inset 0px 0px 5px 1px black;
 }
+.edet-scren .button-contaner button:focus,
+.edet-scren #formaEdet button:focus,
 .form-contaner .button-contaner button:focus,
 .form-contaner form button:focus {
   box-shadow: inset 0px 0px 10px 2px black;
 }
+.edet-scren .button-contaner,
 .form-contaner .button-contaner {
   width: 100%;
   display: flex;
@@ -185,6 +196,10 @@ footer .top-contaner .company-contaner p:hover {
   padding: 10px;
   border-radius: 10px;
 }
+.card.active {
+  background-color: var(--color-icy-aqua);
+  transform: scale(1.1);
+}
 .card p {
   width: 100%;
   text-align: center;
@@ -195,4 +210,46 @@ footer .top-contaner .company-contaner p:hover {
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+.card .button-contaner i {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.card .button-contaner i:hover {
+  transform: scale(1.1);
+}
+.edet-scren {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edet-scren.active {
+  visibility: visible !important;
+}
+.edet-scren #formaEdet {
+  position: relative;
+  width: 50%;
+  padding: 40px;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid var(--color-indigo-bloom);
+}
+.edet-scren #formaEdet .xmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  color: red;
+  transition: 0.5 all ease-in-out;
+  cursor: pointer;
+}
+.edet-scren #formaEdet .xmark:hover {
+  transform: scale(1.1);
 }

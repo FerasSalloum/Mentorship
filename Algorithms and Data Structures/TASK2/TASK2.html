@@ -13,6 +13,15 @@
 </head>
 
 <body>
+    <div class="edet-scren">
+        <div id="formaEdet">
+            <i class="fa-solid fa-circle-xmark xmark" onclick="app.toggleEdet()"></i>
+            <input type="text" id="titlEdet" placeholder="اسم المنتج">
+            <input type="number" min="0" id="praecEdet" placeholder="سعر المنتج">
+            <input type="number" min="0" id="amountEdet" placeholder="العدد المتوفر">
+            <button id="saveBtn" type="button">Edet prodect</button>
+        </div>
+    </div>
     <div class="main-contaner">
         <header>
             <div class="logo">Warehouse</div>
@@ -25,19 +34,18 @@
         </header>
         <div class="body">
             <div class="form-contaner">
-                <form action="">
-                    <input type="text" id="title" placeholder="اسم المنتج">
-                    <input type="number" min="0" placeholder="سعر المنتج">
-                    <input type="number" min="0" placeholder="العدد المتوفر">
-                    <textarea name="" id="" placeholder="وصف المنتج"></textarea>
+                <form id="formAdd">
+                    <input type="text" id="title" placeholder="اسم المنتج" required>
+                    <input type="number" min="0" id="praec" placeholder="سعر المنتج" required>
+                    <input type="number" min="0" id="amount" placeholder="العدد المتوفر" required>
                     <button type="submit">add prodect</button>
                 </form>
                 <div class="button-contaner">
-                    <button>Undo <i class="fa-solid fa-backward-step"></i></button>
-                    <button><i class="fa-solid fa-forward-step"></i> Redo</button>
+                    <button onclick="app.undo()">Undo <i class="fa-solid fa-backward-step"></i></button>
+                    <button onclick="app.redo()"><i class="fa-solid fa-forward-step"></i> Redo</button>
                 </div>
             </div>
-            <div class="cards-contaner">
+            <div class="cards-contaner" id="cardsContaner">
                 <div class="card">
                     <p class="title">عنوان المنتج</p>
                     <p class="praec">سعر المنتج</p>
@@ -48,59 +56,7 @@
                     </div>
                     <div class="button-contaner">
                         <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="title">عنوان المنتج</p>
-                    <p class="praec">سعر المنتج</p>
-                    <p class="amout">العدد المتوفر</p>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-circle-chevron-left"></i>
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                    </div>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="title">عنوان المنتج</p>
-                    <p class="praec">سعر المنتج</p>
-                    <p class="amout">العدد المتوفر</p>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-circle-chevron-left"></i>
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                    </div>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="title">عنوان المنتج</p>
-                    <p class="praec">سعر المنتج</p>
-                    <p class="amout">العدد المتوفر</p>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-circle-chevron-left"></i>
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                    </div>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="title">عنوان المنتج</p>
-                    <p class="praec">سعر المنتج</p>
-                    <p class="amout">العدد المتوفر</p>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-circle-chevron-left"></i>
-                        <i class="fa-solid fa-circle-chevron-right"></i>
-                    </div>
-                    <div class="button-contaner">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash"></i>
+                        <i class="fa-solid fa-trash" onclick="app.deletProdcte(current.id)"></i>
                     </div>
                 </div>
             </div>
